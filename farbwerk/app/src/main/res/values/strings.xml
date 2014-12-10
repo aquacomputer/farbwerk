@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">farbwerk</string>
+    <string name="action_settings">Settings</string>
+    <string name="btn_bt_on">Enable Bluetooth</string>
+    <string name="btn_bt_off">Disable Bluetooth</string>
+    <string name="btn_refresh">Refresh Devices</string>
+    <string name="title_activity_farbwerk_device">farbwerk</string>
+    <string name="text_brightness">Brightness</string>
+    <string name="text_saturation">Saturation</string>
+
+    <string name="output_selector">Choose an output</string>
+    <string-array name="output_arrays">
+        <item>RGB Output 1</item>
+        <item>RGB Output 2</item>
+        <item>RGB Output 3</item>
+        <item>RGB Output 4</item>
+    </string-array>
+
+</resources>
