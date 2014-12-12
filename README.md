@@ -39,7 +39,7 @@ Extras->Android Support Library
 
 5. Adjust the path in of sdk in local.properties after import i.e. to (sdk.dir=C\:\\android\\sdk)
 
-App Screenshots:
-![farbwerk device selection](/tree/master/screens/screen1.png?raw=true "farbwerk device selection")
-![farbwerk color change](/tree/master/screens/screen2.png?raw=true "farbwerk color change")
-![farbwerk channel selection](/tree/master/screens/screen3.png?raw=true "farbwerk channel selection")
+App screenshots:
+![farbwerk device selection](/screens/screen1.png "farbwerk device selection")
+![farbwerk color change](/screens/screen2.png "farbwerk color change")
+![farbwerk channel selection](/screens/screen3.png "farbwerk channel selection")
