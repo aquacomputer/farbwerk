@@ -1,7 +1,17 @@
 farbwerk
 ========
+## 4x RGB LED controller, put color in your life! 
 
-farbwerk app
+![farbwerk device](/tree/master/screens/farbwerk_bluetooth1.jpg?raw=true "farbwerk")
+![farbwerk device](/tree/master/screens/farbwerk_bluetooth2.jpg?raw=true "farbwerk hardware")
+
+The farbwerk offers 13-bit color resolution of 8192 steps per primary color. 
+Because of the high resolution even color transitions with low brightness settings are almost continuously.
+We added an USB port to the farbwerk so it can be controlled by the aquasuite software. 
+You can connect any number of farbwerk controllers via USB and have them all managed in the aquasuite.
+The USB interface also allows firmware updates so that new features can be added. 
+The controller offers plenty of memory and performance for new ideas.
+Four analog sensor ports allow a direct control by temperature (-40 °C to +100 °C), voltage (0 to 3.3V) or resistance (100 Ohm to 25kOhm).
 
 * Device
 http://shop.aquacomputer.de/product_info.php?products_id=3233
@@ -28,3 +38,8 @@ Extras->Android Support Library
 4. import this project
 
 5. Adjust the path in of sdk in local.properties after import i.e. to (sdk.dir=C\:\\android\\sdk)
+
+App Screenshots:
+![farbwerk device selection](/tree/master/screens/screen1.png?raw=true "farbwerk device selection")
+![farbwerk color change](/tree/master/screens/screen2.png?raw=true "farbwerk color change")
+![farbwerk channel selection](/tree/master/screens/screen3.png?raw=true "farbwerk channel selection")
