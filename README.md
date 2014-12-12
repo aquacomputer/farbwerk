@@ -2,6 +2,7 @@ farbwerk
 ========
 ## 4x RGB LED controller, put color in your life! 
 
+[[/screens/farbwerk_bluetooth1.jpg]]
 ![farbwerk device](/tree/master/screens/farbwerk_bluetooth1.jpg?raw=true "farbwerk")
 ![farbwerk device](/tree/master/screens/farbwerk_bluetooth2.jpg?raw=true "farbwerk hardware")
 
