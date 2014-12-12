@@ -2,9 +2,8 @@ farbwerk
 ========
 ## 4x RGB LED controller, put color in your life! 
 
-[[/screens/farbwerk_bluetooth1.jpg]]
-![farbwerk device](/tree/master/screens/farbwerk_bluetooth1.jpg?raw=true "farbwerk")
-![farbwerk device](/tree/master/screens/farbwerk_bluetooth2.jpg?raw=true "farbwerk hardware")
+![farbwerk device](/screens/farbwerk_bluetooth1.jpg "farbwerk")
+![farbwerk device](/screens/farbwerk_bluetooth2.jpg "farbwerk hardware")
 
 The farbwerk offers 13-bit color resolution of 8192 steps per primary color. 
 Because of the high resolution even color transitions with low brightness settings are almost continuously.
