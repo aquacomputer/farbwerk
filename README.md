@@ -1,45 +1,42 @@
-farbwerk
+farbwerk - 4x RGB LED controller to put color in your life
 ========
-## 4x RGB LED controller, put color in your life! 
+
+**What is farbwerk?**
+
+The farbwerk is an innovative four channel RGB controller for LED strips. The name derives from the German words "Farbe" (color) and "Werk" (factory/plant/work). Twelve channels in total can be used for up to four RGB strips or as individual channels. Each channel has a resolution of 13 bits (8192 individual steps), resulting in smooth color transitions even at low brightness settings. 
 
 ![farbwerk device](/screens/farbwerk_bluetooth1.jpg "farbwerk")
+
+The farbwerk is an autonomous device with an embedded micro processor and can be operated without a PC. Four sensor inputs can be used with compatible temperature sensors (not included in delivery) to visualize temperatures as colors. The controller offers plenty of memory and performance for new ideas. Four analog sensor ports allow a direct control by temperature (-40 Â°C to +100 Â°C), voltage (0 to 3.3V) or resistance (100 Ohm to 25kOhm).
+
 ![farbwerk device](/screens/farbwerk_bluetooth2.jpg "farbwerk hardware")
 
-The farbwerk offers 13-bit color resolution of 8192 steps per primary color. 
-Because of the high resolution even color transitions with low brightness settings are almost continuously.
-We added an USB port to the farbwerk so it can be controlled by the aquasuite software. 
-You can connect any number of farbwerk controllers via USB and have them all managed in the aquasuite.
-The USB interface also allows firmware updates so that new features can be added. 
-The controller offers plenty of memory and performance for new ideas.
-Four analog sensor ports allow a direct control by temperature (-40 °C to +100 °C), voltage (0 to 3.3V) or resistance (100 Ohm to 25kOhm).
+The device is also available in a Bluetooth enabled variant so it can be controlled with a smartphone or tablet for example. The demo app (this project) is written for Android and requires version 4.4.2 as minimum.
 
-* Device
-http://shop.aquacomputer.de/product_info.php?products_id=3233
-http://forum.aquacomputer.de/wasserk-hlung/105463-farbwerk-jetzt-wird-es-bunt-neuer-4x-rgb-led-controller/
+* [Further information about farbwerk](http://forum.aquacomputer.de/weitere-foren/english-forum/105464-farbwerk-put-color-in-your-life-new-4x-rgb-led-controller/)
+* [Get farbwerk from our webshop](http://shop.aquacomputer.de/product_info.php?language=en&products_id=3232)
 
-* Software to control the device via bluetooth
-* Minimum supported android version is: 4.4.2
+**How to work with the source code?**
 
-Build farbwerk from source:
+1. Download and install the [Java Development Kit (JDK) 7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)
 
-1. install  Java Development Kit (JDK) 7
-http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html
+2. Download and and install [Android Studio](https://developer.android.com/sdk/index.html)
 
-2. load and install android studio
-https://developer.android.com/sdk/index.html
+3. Use the installed Android SDK manager (SDK Manager.exe) and download the following modues with it:
+  - Android SDK Tools
+  - Android SDK Platform Tools
+  - Android 4.4.2 (API 19)
+  - Extras->Android Support Repository
+  - Extras->Android Support Library
 
-3. download and install with the android sdk manager (SDK Manager.exe)
-Android SDK Tools
-Android SDK Platform Tools
-Android 4.4.2 (API 19)
-Extras->Android Support Repository
-Extras->Android Support Library
+4. Import this project
 
-4. import this project
+5. After the import adjust the SDKs path of local.properties (i.e. to sdk.dir=C:\\android\\sdk)
 
-5. Adjust the path in of sdk in local.properties after import i.e. to (sdk.dir=C\:\\android\\sdk)
+**Screenshots of the demo app**
 
-App screenshots:
-![farbwerk device selection](/screens/screen1.png "farbwerk device selection")
 ![farbwerk color change](/screens/screen2.png "farbwerk color change")
+
+![farbwerk device selection](/screens/screen1.png "farbwerk device selection")
+
 ![farbwerk channel selection](/screens/screen3.png "farbwerk channel selection")
