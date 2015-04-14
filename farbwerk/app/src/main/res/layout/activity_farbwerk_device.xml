@@ -12,19 +12,26 @@
         android:orientation="horizontal"
         android:layout_marginTop="0dp"
         android:id="@+id/linearLayout">
-
+        <ImageButton
+            android:id="@+id/image_btn_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/save"
+            style="@android:style/Widget.DeviceDefault.Button.Borderless" />
         <ImageView
             android:id="@+id/image_bt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_launcher"
-            android:layout_gravity="left" />
+            android:src="@drawable/ic_launcher"/>
         <Spinner
             android:id="@+id/output_selection"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:entries="@array/output_arrays"
             android:prompt="@string/output_selector" />
+
+
+
     </LinearLayout>
 
     <LinearLayout
@@ -69,7 +76,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
-
     </LinearLayout>
 
 

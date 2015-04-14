@@ -30,6 +30,7 @@ public class BluetoothConnector extends Thread
     private AsyncWriter writer = null;
     private int[] send_colors = new int[4];
     private int[] fade_times = new int[4];
+    private boolean[] save_data_flag = new boolean[4];
     private boolean[] send_trigger = new boolean[4];
     private boolean stop_request = false;
 
@@ -47,6 +48,7 @@ public class BluetoothConnector extends Thread
             send_colors[i] = 0;
             fade_times[i] = 100;
             send_trigger[i] = false;
+            save_data_flag[i] = false;
         }
     }
 
@@ -121,13 +123,18 @@ public class BluetoothConnector extends Thread
             if(connection_state) {
                 //we are connected, send colors to device when a colors needs an update
                 if (send_trigger[0])
-                    _sendData(send_colors[0], 0, fade_times[0]);
+                    _sendData(send_colors[0], 0, fade_times[0], save_data_flag[0]);
                 if (send_trigger[1])
-                    _sendData(send_colors[1], 1, fade_times[1]);
+                    _sendData(send_colors[1], 1, fade_times[1], save_data_flag[1]);
                 if (send_trigger[2])
-                    _sendData(send_colors[2], 2, fade_times[2]);
+                    _sendData(send_colors[2], 2, fade_times[2], save_data_flag[2]);
                 if (send_trigger[3])
-                    _sendData(send_colors[3], 3, fade_times[3]);
+                    _sendData(send_colors[3], 3, fade_times[3], save_data_flag[3]);
+
+                save_data_flag[0] = false;
+                save_data_flag[1] = false;
+                save_data_flag[2] = false;
+                save_data_flag[3] = false;
             }
         }
         disconnect();
@@ -292,6 +299,11 @@ public class BluetoothConnector extends Thread
 
     public void sendData(int color, int output_id, int fade_time)
     {
+        sendData(color, output_id, fade_time, false);
+    }
+
+    public void sendData(int color, int output_id, int fade_time, boolean save_in_device)
+    {
         boolean force_update = false;
         if(output_id <0 || output_id > 3)
             return;
@@ -304,6 +316,8 @@ public class BluetoothConnector extends Thread
             send_colors[output_id] = color;         //new color
             fade_times[output_id] = fade_time;      //new fade time
             send_trigger[output_id] = true;         //tiger to start an color update
+            if(save_in_device)
+                save_data_flag[output_id] = true;
         }
     }
 
@@ -312,7 +326,7 @@ public class BluetoothConnector extends Thread
      * @param output_id = 0..3 (rgb output 0..3
      * @param fade_time = 0..10000 ms
      */
-    private void _sendData(int color, int output_id, int fade_time)
+    private void _sendData(int color, int output_id, int fade_time, boolean save_in_device)
     {
         if(output_id <0 || output_id > 3)
             return;
@@ -325,6 +339,7 @@ public class BluetoothConnector extends Thread
             //farbwerk color output object
             FarbwerkColor send_data = new FarbwerkColor();
             send_data.setColor(send_colors[output_id]);
+            send_data.save = save_in_device;
             send_data.fade_time = fade_time;
             send_data.output_id = output_id;
 

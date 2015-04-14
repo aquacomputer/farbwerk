@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.ImageButton;
 import android.widget.Toast;
 import android.widget.AdapterView;
 import android.net.Uri;
@@ -36,6 +37,7 @@ public class FarbwerkDevice extends Activity implements OnColorChangedListener
     private ColorPicker picker;
     private ValueBar valueBar;
     private SaturationBar saturationBar;
+    private ImageButton save_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -61,6 +63,14 @@ public class FarbwerkDevice extends Activity implements OnColorChangedListener
         picker.addValueBar(valueBar);
         picker.addSaturationBar(saturationBar);
         picker.setShowOldCenterColor(false);
+
+        save_button = (ImageButton) findViewById(R.id.image_btn_save);
+        save_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                on_save_click(v);
+            }
+        });
 
         int default_color = 0xff000000 | 0xff << 16; //red
         SharedPreferences settings = getSharedPreferences(PREFERENCES_NAME, 0);
@@ -134,6 +144,14 @@ public class FarbwerkDevice extends Activity implements OnColorChangedListener
     {
         int fade_time = 75; //75ms fade time
         bt.sendData(color, id, fade_time);
+    }
+
+    private void on_save_click(View v)
+    {
+        int color = picker.getColor();
+        int output_id = output_selector.getSelectedItemPosition();
+        output_color_last[output_id] = color;
+        bt.sendData(color, output_id, 0, true);
     }
 
     @Override

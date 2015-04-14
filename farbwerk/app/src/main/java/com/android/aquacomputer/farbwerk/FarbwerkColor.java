@@ -18,7 +18,11 @@ public class FarbwerkColor {
         b = 0;
         output_id = 0;
         fade_time = 0;
+
+        save = false;
     }
+
+    boolean save;
 
     //color parts
     public double r;
@@ -65,8 +69,11 @@ public class FarbwerkColor {
 
         if(fade_time < 0)
             fade_time = 0;
-        else if(fade_time > 10000)
-            fade_time = 10000;
+        else if(fade_time > 32000)
+            fade_time = 32000;
+
+        if(save)
+            fade_time |= 0x8000;
         myBuffer.putShort((short)fade_time);  //fade time in ms
 
         short color_device;
